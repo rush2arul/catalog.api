@@ -40,7 +40,9 @@ pipeline {
       steps {
 
 	 dir('src')
-	        {       
+	        {  
+		sh 'docker container stop catalog.api'
+		sh 'docker container rm catalog.api'
         	sh 'docker run -d --env-file env.catalog.api -p "8000:80"  --name catalog.api  catalog.api'  
         	}
 
