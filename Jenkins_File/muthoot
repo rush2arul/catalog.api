@@ -41,13 +41,7 @@ pipeline {
 
 	 dir('src')
 	        {  
-		if(!(docker ps  | grep catalog.api))
-		then
-			echo "PASS"
-		else 
-			echo "FAIL"
-		fi
-		  
+		sh '/home/arul/MUTHOOT/CUSTOM/DOCKER_COMPOSE/stopbyname.sh catalog.api'		  
 			
         	}
 
