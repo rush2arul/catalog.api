@@ -41,7 +41,7 @@ pipeline {
 
 	 dir('src')
 	        {  
-			if (docker ps --format \'{{.Names}}\' | grep catalog.api) then
+			if (docker ps --format '{{.Names}}' | grep catalog.api) then
          			echo "Found"
 			else
 				echo "Not Found"
