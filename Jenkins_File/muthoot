@@ -31,7 +31,8 @@ pipeline {
       steps {
 	 dir('src')
         	{       
-		echo "Build"
+		sh 'docker build -t catalog.api .'
+		echo "Build Complete"
         	}
 
       }
@@ -41,7 +42,8 @@ pipeline {
 
 	 dir('src')
 	        {  
-		sh '/home/arul/MUTHOOT/CUSTOM/DOCKER_COMPOSE/stopbyname.sh catalog.api'		  
+		sh '/home/arul/MUTHOOT/CUSTOM/DOCKER_COMPOSE/stopbyname.sh catalog.api'	
+		sh 'docker run -d --env-file env.catalog.api -p "8000:80"  --name catalog.api  catalog.api'
 			
         	}
 
