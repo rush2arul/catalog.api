@@ -41,7 +41,7 @@ pipeline {
 
 	 dir('src')
 	        {  
-		sh 'docker ps --format \'{{.Names}}\' | grep catalog.api && echo Found'
+		sh 'docker ps --format \'{{.Names}}\' | grep catalog.api && docker container stop catalog.api'
 		echo "Finished"
 		
         	}
