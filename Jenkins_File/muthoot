@@ -31,7 +31,8 @@ pipeline {
       steps {
 	 dir('src')
         	{       
-		sh 'docker build -t catalog.api .'
+		#sh 'docker build -t catalog.api .'
+		echo "Build"
         	}
 
       }
