@@ -41,7 +41,7 @@ pipeline {
 
 	 dir('src')
 	        {  
-		if  !(docker ps  | grep catalog.api )
+		if(!(docker ps  | grep catalog.api))
 		then
 			echo "PASS"
 		else 
