@@ -3,7 +3,8 @@ pipeline {
   triggers {
     GenericTrigger(
      genericVariables: [
-      [key: 'ref', value: '$.ref']
+      [key: 'ref', value: '$.ref'],
+      [key: 'before' , value:'$.before' ]
      ],
 
      causeString: 'Triggered on $ref',
@@ -32,8 +33,10 @@ pipeline {
       steps {
 	 dir('src')
         	{       
+		sh 'echo ref:$ref'
+		sh 'echo before:$before'
 		sh 'docker build -t catalog.api .'
-		echo "Build Complete. . . "
+		sh 'echo "Build Complete. . . "'
         	}
 
       }
