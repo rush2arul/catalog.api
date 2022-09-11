@@ -32,7 +32,7 @@ pipeline {
 	 dir('src')
         	{       
 		sh 'docker build -t catalog.api .'
-		echo "Build Complete"
+		echo "Build Complete. . . "
         	}
 
       }
