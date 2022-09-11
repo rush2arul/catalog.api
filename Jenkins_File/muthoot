@@ -24,7 +24,6 @@ pipeline {
     stage('Validation') {
       steps {
         sh "echo Validation"
-	sh "echo $.ref"
 	sh "echo $ref"
       	   }
     }
