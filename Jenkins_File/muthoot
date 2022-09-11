@@ -16,7 +16,7 @@ pipeline {
 
      silentResponse: false,
 
-     regexpFilterText: 'refs/heads/develop',
+     regexpFilterText: 'refs/heads/main',
      regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
     )
   }
