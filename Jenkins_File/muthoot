@@ -42,13 +42,15 @@ pipeline {
 
       }
     }
-    stage('Deploy') {
+    stage('nexus_push') {
       steps {
 
 	 dir('src')
 	        {  
-		sh '/home/arul/MUTHOOT/CUSTOM/DOCKER_COMPOSE/stopbyname.sh catalog.api'	
+		sh '#/home/arul/MUTHOOT/CUSTOM/DOCKER_COMPOSE/stopbyname.sh catalog.api'	
 		sh '#docker run -d --env-file env.catalog.api -p "8000:80"  --name catalog.api  catalog.api'
+		sh '/var/lib/jenkins/SCRIPTS/main.sh nex_push'
+        	
 			
         	}
 
