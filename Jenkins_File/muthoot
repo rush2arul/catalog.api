@@ -37,7 +37,7 @@ pipeline {
 		sh '#echo before:$before'
 		sh '#docker build -t catalog.api .'
 		sh '#echo "Build Complete. . . "'
-		sh 'SCRIPTS/main.sh build'
+		sh '/var/lib/jenkins/SCRIPTS/main.sh build'
         	}
 
       }
